@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+*,
+::after,
+::before,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brand-primary: #3b71fe;
+  --brand-tertiary: #fcfcfd;
+  --brand-white: #fff;
+  --brand-black: #000;
+  --brand-text-secondary: #777e90;
+  --font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--brand-tertiary);
+}
+
+h1 {
+  font-size: 9.6rem;
+}
+
+h2 {
+  font-size: 4.8rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.6rem;
+  color: var(--brand-text-secondary);
+}
+
+span {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--brand-black);
+}
+
+img {
+  max-width: 100%;
+}
+
+.pt-10 {
+  padding-top: 10rem;
+}
+
+.py-10 {
+  padding: 10rem 0;
+}
+
+.my-10 {
+  margin: 10rem 0;
+}
+
+.mt-20 {
+  margin-top: 20rem;
+}
+
+.my-20 {
+  margin: 20rem 0;
+}
+
+.ms-27 {
+  margin-left: 27rem;
+}
+
+.bg-brand-primary {
+  background-color: var(--brand-primary);
+}
+
+.bg-brand-secondary {
+  background-color: var(--brand-secondary);
+}
+
+.bg-brand-tertiary {
+  background-color: var(--brand-tertiary);
+}
+
+.text-brand {
+  color: var(--brand-primary);
+}
+
+@mixin btn-brand-primary() {
+  background: none;
+  color: var(--brand-black) !important;
+  border: 1px solid var(--brand-white);
+  border-radius: 90px;
+  border: 2px solid #e6e8ec;
+  padding: 12px 16px;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--brand-white);
+    color: var(--brand-black) !important;
+  }
+}
+
+.btn-brand-primary {
+  @include btn-brand-primary();
+}
+
+@mixin btn-brand-secondary() {
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  border-radius: 90px;
+  font-weight: 700;
+  padding: 16px 24px;
+  border: 2px solid var(--brand-primary);
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btn-brand-secondary {
+  @include btn-brand-secondary();
+}
+
+// Navbar
+.navbar {
+  background-color: var(--brand-tertiary);
+  color: var(--brand-black);
+
+  .nav-item {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    text-align: center;
+
+    .nav-link {
+      color: var(--brand-text-secondary);
+    }
+  }
+}
+
+// Hero
+.hero {
+  background-image: url("../images/hero.png");
+  height: 70rem;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .hero_content {
+    width: 50.7rem;
+
+    h1 {
+      font-weight: 700;
+      line-height: 9.6rem;
+      color: #23262f;
+    }
+
+    p {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      font-weight: 400;
+      color: #23262f;
+    }
+  }
+
+  .hero_services {
+    width: 116rem;
+    padding: 40px;
+    border-radius: 24px;
+    background: linear-gradient(0deg, #fcfcfd, #fcfcfd),
+      linear-gradient(83.59deg, #fcfcfd 36.52%, rgba(252, 252, 253, 0.83) 98.8%);
+    box-shadow: 0px 40px 64px -32px #0f0f0f1a;
+    position: absolute;
+    left: 48%;
+    top: 93%;
+    transform: translate(-50%, -50%);
+
+    .hero_services_nav {
+      a {
+        font-size: 1.4rem;
+        color: var(--brand-text-secondary);
+      }
+    }
+
+    h5 {
+      font-size: 2.4rem;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+    }
+
+    .services-visibility {
+      visibility: visible;
+    }
+  }
+}
+
+// Places
+.places {
+  h2 {
+    font-weight: 700;
+  }
+  p {
+    font-size: 2.4rem;
+    line-height: 32px;
+  }
+}
+
+// Swiper Carousal Customization
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 12rem;
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.swiper-button-next {
+  left: 50% !important;
+  top: 90% !important;
+
+  &::after {
+    content: "\2192"; /* Unicode character for left arrow */
+    display: inline-block;
+    font-size: 2rem;
+    padding: 4px !important;
+    border-radius: 40px;
+    border: 2px solid #e6e8ec;
+    color: var(--brand-black);
+  }
+}
+
+.swiper-button-prev {
+  left: 47% !important;
+  top: 90% !important;
+
+  &::after {
+    content: "\2190"; /* Unicode for right arrow */
+    font-size: 2rem;
+    display: inline-block;
+    padding: 4px !important;
+    border-radius: 40px;
+    border: 2px solid #e6e8ec;
+    color: var(--brand-black);
+  }
+}
+
+// Swiper Slider Content
+.slide_wrapper {
+  small {
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #e6e8ec;
+  }
+}
+
+// Gallery
+.gallery {
+  p {
+    font-size: 1.6rem;
+    color: var(--brand-black);
+    font-weight: 700;
+  }
+
+  small {
+    font-size: 1.4rem;
+  }
+
+  .gallary-btn {
+    width: 13rem;
+    border-radius: 90px;
+    border: 2px solid #e6e8ec;
+    padding: 12px 16px;
+  }
+}
+
+// footer
+.footer {
+  p {
+    font-size: 1.4rem !important;
+    line-height: 1.6rem;
+    color: var(--brand-text-secondary);
+  }
+
+  small {
+    font-size: 1.2rem;
+  }
+}
+
+//   Form Control Customization
+.form-control {
+  width: 255px;
+  height: 48px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 90px;
+  border: 2px solid #e6e8ec;
+
+  &:focus {
+    border: 1px solid var(--brand-primary);
+    box-shadow: none;
+  }
+}
+
+// Media Queries For SX and SM Devices
+@media (min-width: 0) and (max-width: 767px) {
+  h1 {
+    font-size: 4.8rem;
+    line-height: 4.8rem !important;
+  }
+
+  p {
+    font-size: 1.6rem !important;
+  }
+  .ms-27 {
+    margin-left: 0;
+  }
+  .nav-divider {
+    display: none;
+  }
+
+  .hero_services {
+    width: 50rem !important;
+    left: 52% !important;
+    transform: translate(-60%, -50%);
+  }
+
+  .services-visibility1,
+  .services-visibility2,
+  .services-visibility3 {
+    visibility: collapse !important;
+  }
+
+  .swiper-button-next {
+    left: 55% !important;
+    top: 90% !important;
+
+    &::after {
+      font-size: 3rem !important;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 45% !important;
+    top: 90% !important;
+
+    &::after {
+      font-size: 3rem !important;
+    }
+  }
+}
+
+// Media Queries For MD Devices
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero_services {
+    width: 70rem !important;
+    left: 52% !important;
+    transform: translate(-60%, -50%);
+  }
+
+  .services-visibility3 {
+    visibility: collapse !important;
+  }
+
+  .swiper-button-next {
+    left: 56% !important;
+  }
+
+  .swiper-button-prev {
+    left: 50% !important;
+  }
+}
+
+// Media Queries For LG Devices
+@media (min-width: 992px) and (max-width: 1200px) {
+  .hero_services {
+    width: 82rem !important;
+    left: 52% !important;
+    transform: translate(-60%, -50%);
+  }
+
+  .swiper-button-next {
+    left: 54% !important;
+  }
+
+  .swiper-button-prev {
+    left: 50% !important;
+  }
+}
